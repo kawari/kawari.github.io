@@ -1,10 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <HTML lang="ja">
 <HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META http-equiv="Content-Script-Type" content="text/javascript">
 <META http-equiv="Content-Style-Type" content="text/css">
-<TITLE>�ؘa����{�}�j���A��</TITLE>
+<TITLE>華和梨基本マニュアル</TITLE>
 
 <STYLE>
 <!--
@@ -112,22 +112,22 @@ SPAN.tt {
 <DIV align="center">
 <DIV class="title">
 	<P class="h1">
-	�v���O���}�u����AI���W���[��
+	プログラマブル準AIモジュール
 	</P><P class="h1">
-	�u"�ؘa��" for ����ȊO�̉����ȊO�̉����v<BR>
-	��{�}�j���A��
+	「"華和梨" for あれ以外の何か以外の何か」<BR>
+	基本マニュアル
         </P>
 	<DIV align="right">
 		<P>
 		2003/02/16<BR>
 		Phase 7.5.0
 		</P><P>
-		�ؘa���J���`�[��<BR><BR>
+		華和梨開発チーム<BR><BR>
 		NAKAUE.T (Meister)<BR>
-		���T (�UMeister)<BR>
-		����<BR>
-		���Ɓ[<BR>
-		������̂ɂ�
+		夢乃 (偽Meister)<BR>
+		酔狂<BR>
+		さとー<BR>
+		さくらのにえ
 		</P>
 	</DIV>
 </DIV>
@@ -136,60 +136,60 @@ SPAN.tt {
 <H2>Index</H2>
 
 <BLOCKQUOTE>
-<A href="#install">1. �C���X�g�[��</A><BR>
-<A href="#datafile">2. �t�@�C���ɂ���</A><BR>
+<A href="#install">1. インストール</A><BR>
+<A href="#datafile">2. ファイルについて</A><BR>
 <A href="#kawariini">3. kawari.ini</A><BR>
-�@<A href="#inifile">3.1. kawari.ini�t�@�C���̏�����</A><BR>
-�@<A href="#iniinclude">3.2. �O���t�@�C���̎�荞��</A><BR>
-�@<A href="#iniadddict">3.3. �����ւ̒P��ǉ�</A><BR>
-�@<A href="#initext">3.4. �e�L�X�g�t�@�C���̓ǂݍ���</A><BR>
-�@<A href="#inidebug">3.5. �f�o�b�O�p�̓��샂�[�h�w��</A><BR>
-�@<A href="#inisecurity">3.6. �Z�L�����e�B���x���̎w��</A><BR>
-�@<A href="#inisaori">3.7. SAORI���W���[���̓ǂݍ���</A><BR>
-�@<A href="#inii18n">3.8. �����R�[�h�w��</A><BR>
-<A href="#dict">4. ����</A><BR>
-�@<A href="#dictfile">4.1. �����t�@�C���̏�����</A><BR>
-�@<A href="#doublequote">4.2. �_�u���N�H�[�g</A><BR>
-�@<A href="#entrycall">4.3. �G���g���Ăяo��</A><BR>
-�@<A href="#historycall">4.4. �����Q��</A><BR>
-�@<A href="#systementry">4.5. �V�X�e���G���g��</A><BR>
-�@<A href="#evententry">4.6. �C�x���g�G���g��</A><BR>
-�@<A href="#matchentry">4.7. �}�b�`�G���g����COMMUNICATE</A><BR>
-�@<A href="#resourceentry">4.8. ���\�[�X�G���g��</A><BR>
-<A href="#inlinescript">5. �C�����C���X�N���v�g</A><BR>
-<A href="#crypt">6. �Í�������</A><BR>
+　<A href="#inifile">3.1. kawari.iniファイルの書き方</A><BR>
+　<A href="#iniinclude">3.2. 外部ファイルの取り込み</A><BR>
+　<A href="#iniadddict">3.3. 辞書への単語追加</A><BR>
+　<A href="#initext">3.4. テキストファイルの読み込み</A><BR>
+　<A href="#inidebug">3.5. デバッグ用の動作モード指定</A><BR>
+　<A href="#inisecurity">3.6. セキュリティレベルの指定</A><BR>
+　<A href="#inisaori">3.7. SAORIモジュールの読み込み</A><BR>
+　<A href="#inii18n">3.8. 文字コード指定</A><BR>
+<A href="#dict">4. 辞書</A><BR>
+　<A href="#dictfile">4.1. 辞書ファイルの書き方</A><BR>
+　<A href="#doublequote">4.2. ダブルクォート</A><BR>
+　<A href="#entrycall">4.3. エントリ呼び出し</A><BR>
+　<A href="#historycall">4.4. 履歴参照</A><BR>
+　<A href="#systementry">4.5. システムエントリ</A><BR>
+　<A href="#evententry">4.6. イベントエントリ</A><BR>
+　<A href="#matchentry">4.7. マッチエントリとCOMMUNICATE</A><BR>
+　<A href="#resourceentry">4.8. リソースエントリ</A><BR>
+<A href="#inlinescript">5. インラインスクリプト</A><BR>
+<A href="#crypt">6. 暗号化辞書</A><BR>
 </BLOCKQUOTE>
 
 <A name="install"></A>
-<H2>1. �C���X�g�[��</H2>
+<H2>1. インストール</H2>
 
 <P>
-�S�[�X�g�̃f�B���N�g���ɁA�ȉ��̃t�@�C����u���ĉ������B
+ゴーストのディレクトリに、以下のファイルを置いて下さい。
 </P>
 
 <DIV align="center">
 <TABLE width="80%">
-<TR><TD>shiori.dll</TD><TD>"�ؘa��"���̂���(�K�{)</TD></TR>
-<TR><TD>kawari.ini</TD><TD>�ݒ�t�@�C��(�K�{)</TD></TR>
-<TR><TD>dict-*.txt</TD><TD>�����t�@�C��</TD></TR>
-<TR><TD>ghost-*.txt</TD><TD>"�ؘa��"�����`���̃S�[�X�g��b�f�[�^�t�@�C��</TD></TR>
+<TR><TD>shiori.dll</TD><TD>"華和梨"そのもの(必須)</TD></TR>
+<TR><TD>kawari.ini</TD><TD>設定ファイル(必須)</TD></TR>
+<TR><TD>dict-*.txt</TD><TD>辞書ファイル</TD></TR>
+<TR><TD>ghost-*.txt</TD><TD>"華和梨"辞書形式のゴースト会話データファイル</TD></TR>
 </TABLE>
 </DIV>
 
 
 <A name="datafile"></A>
-<H2>2. �t�@�C���ɂ���</H2>
+<H2>2. ファイルについて</H2>
 
 <P>
-"�ؘa��"�̃f�[�^�t�@�C���ɂ́A�ݒ�t�@�C���Ǝ����t�@�C���̓��ނ�����܂��B<BR>
-�ݒ�t�@�C��kawari.ini�́A"�ؘa��"���ǂݍ��ނׂ������t�@�C�����w�肵�܂��B<BR>
-�����t�@�C���́A��b���f�[�^�Ɖ�b���ŗp����P��f�[�^�����߂�t�@�C���ł��B
-�����t�@�C���̐���t�@�C�����ɂ́A���ɐ����͂���܂���Bkawari.ini���Ŏw��
-���������A�S�Ẵt�@�C�����ǂݍ��܂�܂��B<BR>
-�������A���̃t�@�C���Ƃ̏Փ˂�h�����߁A�P��f�[�^����̎����t�@�C���̖��O��
-�udict-*.txt�v�A��b�f�[�^����̎����t�@�C���̖��O���ughost-*.txt�v�Ƃ��邱��
-��"����" ("�ؘa��"�̓v���O�������͔̂ėp�I�ɍ���Ă����A���[�U�[���̎g�p���@��
-"����" ���邱�Ƃɂ���ċK�i������Ă��镔�������X����܂��B)���܂��B
+"華和梨"のデータファイルには、設定ファイルと辞書ファイルの二種類があります。<BR>
+設定ファイルkawari.iniは、"華和梨"が読み込むべき辞書ファイルを指定します。<BR>
+辞書ファイルは、会話文データと会話文で用いる単語データを収めるファイルです。
+辞書ファイルの数やファイル名には、特に制限はありません。kawari.ini中で指定
+しただけ、全てのファイルが読み込まれます。<BR>
+ただし、他のファイルとの衝突を防ぐため、単語データが主の辞書ファイルの名前を
+「dict-*.txt」、会話データが主の辞書ファイルの名前を「ghost-*.txt」とすること
+を"推奨" ("華和梨"はプログラム自体は汎用的に作っておき、ユーザー側の使用方法を
+"推奨" することによって規格を作っている部分が多々あります。)します。
 </P>
 
 
@@ -198,306 +198,306 @@ SPAN.tt {
 <H2>3. kawari.ini</H2>
 
 <P>
-kawari.ini�t�@�C����"�ؘa��"���ǂݍ��ނׂ�������A"�ؘa��"�̓��샂�[�h��
-�w�肷��t�@�C���ŁA�K���p�ӂ���K�v������܂��B
+kawari.iniファイルは"華和梨"が読み込むべき辞書や、"華和梨"の動作モードを
+指定するファイルで、必ず用意する必要があります。
 </P>
 
 <A name="inifile"></A>
-<H3>3.1. kawari.ini�t�@�C���̏�����</H3>
+<H3>3.1. kawari.iniファイルの書き方</H3>
 
 <P>
-��s�Ɂudict :  �t�@�C�����v�̌`�œǂݍ��ނׂ������t�@�C�������w�肵�܂��B
-�u#�v����n�܂�s�̓R�����g�Ƃ��Ė������܂��B<BR>
-����ȊO�̕����Ŏn�܂�s���A"�ؘa��"�����߂ł��Ȃ��ꍇ�͖������܂��B�������A
-�����̋@�\�g���̍ہA��肪�N����\��������܂��B
+一行に「dict :  ファイル名」の形で読み込むべき辞書ファイル名を指定します。
+「#」から始まる行はコメントとして無視します。<BR>
+これ以外の文字で始まる行も、"華和梨"が解釈できない場合は無視します。しかし、
+将来の機能拡張の際、問題が起こる可能性があります。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # �u�ؘa���S�[�X�g�v�ݒ�t�@�C��
+    # 「華和梨ゴースト」設定ファイル
     
-    # ������{�t���[�����[�N
+    # 辞書基本フレームワーク
     dict : dict-base.txt
     
-    # ��{ (�S�[�X�g�ˑ�)
+    # 台本 (ゴースト依存)
     dict : ghost-kawari.txt
     
-    # �W������
+    # 標準辞書
     dict : dict-standard.txt
     dict : dict-dms.txt
 </PRE></BLOCKQUOTE>
 
 
 <A name="iniinclude"></A>
-<H3>3.2. �O���t�@�C���̎�荞��</H3>
+<H3>3.2. 外部ファイルの取り込み</H3>
 
 <P>
-kawari.ini�t�@�C���̓r���ŁA���̃t�@�C���̓��e����荞�ނ��Ƃ��o���܂��B
-�uinclude : �t�@�C�����v�Ŏw�肵�܂��B
+kawari.iniファイルの途中で、他のファイルの内容を取り込むことが出来ます。
+「include : ファイル名」で指定します。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # �O��ini�t�@�C���ukeeps.ini�v����荞��
+    # 外部iniファイル「keeps.ini」を取り込む
     include : keeps.ini
 </PRE></BLOCKQUOTE>
 
 
 <A name="iniadddict"></A>
-<H3>3.3. �����ւ̒P��ǉ�</H3>
+<H3>3.3. 辞書への単語追加</H3>
 
 <P>
-�{���A�����ւ̒P��ǉ��͎����t�@�C���̖����ł����A�ȒP�Ȃ��̂Ȃ�kawari.ini�t�@�C����
-���ł��ǉ����邱�Ƃ��o���܂��B
-�uadddict : �G���g���� �P��v�Ŏw�肵�܂��B
+本来、辞書への単語追加は辞書ファイルの役割ですが、簡単なものならkawari.iniファイルの
+中でも追加することが出来ます。
+「adddict : エントリ名 単語」で指定します。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # �G���g���uauthor�v�Ɂu�܂������[�v��ǉ�����
-    addict : author �܂������[
-    # �G���g���uauthor�v�Ɂu�UMeister�v��ǉ�����
-    addict : author �UMeister
+    # エントリ「author」に「まいすたー」を追加する
+    addict : author まいすたー
+    # エントリ「author」に「偽Meister」を追加する
+    addict : author 偽Meister
 </PRE></BLOCKQUOTE>
 
 <P>
-�uset : �G���g���� �P��v�ƋL�q�����ꍇ�ɂ́A�G���g���̓��e����x��������Ă���
-�P�ꂪ�Z�b�g���Ȃ�����܂��B
+「set : エントリ名 単語」と記述した場合には、エントリの内容が一度消去されてから
+単語がセットしなおされます。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # �G���g���umyname�v�Ɂu��t���l���v��
-    # �G���g���ukeroname�v�Ɂu�]�ː에���v���Z�b�g����
-    set : myname ��t���l��
-    set : keroname �]�ː에��
+    # エントリ「myname」に「二葉亭四迷」を
+    # エントリ「keroname」に「江戸川乱歩」をセットする
+    set : myname 二葉亭四迷
+    set : keroname 江戸川乱歩
 </PRE></BLOCKQUOTE>
 
 
 <A name="initext"></A>
-<H3>3.4. �e�L�X�g�t�@�C���̓ǂݍ���</H4>
+<H3>3.4. テキストファイルの読み込み</H4>
 
 <P>
-Phase 7.1.2����A�����t�@�C���Ɠ����悤�Ƀe�L�X�g�t�@�C����ǂ߂܂��B
-�e�L�X�g�t�@�C�����G���g���Ɋi�[��������́Atextload�R�}���h�Ɠ����ł��B
-�utext : �G���g���� �t�@�C�����v�Ǝw�肵�܂��B
+Phase 7.1.2から、辞書ファイルと同じようにテキストファイルを読めます。
+テキストファイルをエントリに格納する方式は、textloadコマンドと同じです。
+「text : エントリ名 ファイル名」と指定します。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # �G���g���uspell�v�Ƀe�L�X�g�t�@�C���unecronomicon.txt�v��ǂݍ���
+    # エントリ「spell」にテキストファイル「necronomicon.txt」を読み込む
     text : spell necronomicon.txt
 </PRE></BLOCKQUOTE>
 
 <A name="inidebug"></A>
-<H3>3.5. �f�o�b�O�p�̓��샂�[�h�w��</H3>
+<H3>3.5. デバッグ用の動作モード指定</H3>
 
 <P>
-�ȉ��̋L�q�͓��ʂȈӖ��������܂��B�ǂ���f�o�b�O�ړI�ł��̂ŁA���ʂ�
-kawari.ini�ɋL�q����K�v�͂���܂���B
+以下の記述は特別な意味を持ちます。どれもデバッグ目的ですので、普通は
+kawari.iniに記述する必要はありません。
 </P>
 
 <DL>
 <DT>debug : log</DT>
-<DD>shiori.dll�Ɠ����t�H���_�ɁA�ukawari.log�v�Ƃ����t�@�C�������܂��B����
-�t�@�C���ɂ͔��������C�x���g�ƁA����ɑ΂���"�ؘa��"�̉������L�^����܂��B
-�����̃f�o�b�O�̍ۂɋL�q���܂��B</DD>
+<DD>shiori.dllと同じフォルダに、「kawari.log」というファイルを作ります。この
+ファイルには発生したイベントと、それに対する"華和梨"の応答が記録されます。
+辞書のデバッグの際に記述します。</DD>
 <DT>debug : debugger</DT>
-<DD>�f�o�b�K���g�p�\�ɂ��܂��B"�ؘa��"�Ɠ����ɔz�z���Ă���A�R���\�[����
-"�ؘa��"�C���^�v���^�u�K���v���f�o�b�K�Ƃ��Ďg�p����ۂɋL�q���܂��B
-�ڍׂ́u�K���v�̃}�j���A�����Q�Ɖ������B</DD>
-<DT>randomseed : ��������</DT>
-<DD>"�ؘa��"�̗����̎���w�肵�A����p�^�[���̗�����𔭐������܂��B
-�X�N���v�g�̃f�o�b�O�Ɏg�p���邱�Ƃ��ł��܂��B</DD>
+<DD>デバッガを使用可能にします。"華和梨"と同時に配布している、コンソール版
+"華和梨"インタプリタ「幸水」をデバッガとして使用する際に記述します。
+詳細は「幸水」のマニュアルを参照下さい。</DD>
+<DT>randomseed : ＜数字＞</DT>
+<DD>"華和梨"の乱数の種を指定し、特定パターンの乱数列を発生させます。
+スクリプトのデバッグに使用することができます。</DD>
 </DL>
 
 
 <A name="inisecurity"></A>
-<H3>3.6. �Z�L�����e�B���x���̎w��</H3>
+<H3>3.6. セキュリティレベルの指定</H3>
 
 <P>
-�ȉ��̋L�q�́u�����B�v����̃C�x���g�ʒm�ɑ΂���A�Z�L�����e�B���x����
-�w�肷�邽�߂Ɏg�p���܂��B�ȗ������ꍇ�A�����I��redo period 20�ȍ~�ň��S�Ȑݒ��
-�Ȃ�̂ŁA���ʂ�kawari.ini�ɋL�q����K�v�͂���܂���B
+以下の記述は「何か。」からのイベント通知に対する、セキュリティレベルを
+指定するために使用します。省略した場合、自動的にredo period 20以降で安全な設定に
+なるので、普通はkawari.iniに記述する必要はありません。
 </P>
 
 <DL>
 <DT>security : 0</DT>
-<DD>"External"���܂߂��ׂċ�����B</DD>
+<DD>"External"も含めすべて許可する。</DD>
 <DT>security : 1</DT>
-<DD>�\��ς݁A�Ƃ肠����2�Ɠ����B</DD>
+<DD>予約済み、とりあえず2と同じ。</DD>
 <DT>security : 2</DT>
-<DD>�Z�L�����e�B���x�����w�肵�Ȃ��ꍇ�̕W���ݒ�B<BR>
-"External"�ȊO�̃C�x���g��������B</DD>
+<DD>セキュリティレベルを指定しない場合の標準設定。<BR>
+"External"以外のイベントを許可する。</DD>
 <DT>security : 3</DT>
-<DD>���[�J���}�V�����s�̃C�x���g�̂݋�����B</DD>
+<DD>ローカルマシン発行のイベントのみ許可する。</DD>
 </DL>
 
 <P>
-�Z�L�����e�B���x����3�����̏ꍇ�A�N���b�L���O�΍�Ƃ���system.OnLoad
-�G���g����]����́Aresource.homeurl�G���g���������������Ȃ��悤��
-�Ȃ��Ă��܂��B���ʂ͂��ꂪ���ɂȂ邱�Ƃ͂���܂���B
+セキュリティレベルが3未満の場合、クラッキング対策としてsystem.OnLoad
+エントリを評価後は、resource.homeurlエントリが書き換えられないように
+なっています。普通はこれが問題になることはありません。
 </P>
 
 <A name="inisaori"></A>
-<H3>3.7. SAORI���W���[���̓ǂݍ���</H3>
+<H3>3.7. SAORIモジュールの読み込み</H3>
 
 <P>
-�ȉ��̋L�q�́ASAORI�K�i�̋@�\�g�����W���[����g�ݍ��ގ��Ɏg�p���܂��B
+以下の記述は、SAORI規格の機能拡張モジュールを組み込む時に使用します。
 </P>
 
 <BLOCKQUOTE><P>
-saori : ��SAORI���W���[������, ���G�C���A�X�� [ , ���I�v�V������]
+saori : ＜SAORIモジュール名＞, ＜エイリアス＞ [ , ＜オプション＞]
 </P></BLOCKQUOTE>
 
 <DL>
-<DT>SAORI���W���[����(�K�{)</DT>
+<DT>SAORIモジュール名(必須)</DT>
 <DD>
-SAORI���W���[���̃t�@�C�������L�q���܂��B�g���q(�u.dll�v��)���܂߂܂��B
-"�ؘa��"�̑��݂���t�H���_����̑��΃p�X�ŋL�q���܂��B
+SAORIモジュールのファイル名を記述します。拡張子(「.dll」等)を含めます。
+"華和梨"の存在するフォルダからの相対パスで記述します。
 </DD>
-<DT>�G�C���A�X(�K�{)</DT>
+<DT>エイリアス(必須)</DT>
 <DD>
-���ۂ�SAORI���W���[�����g�p����ہA
-�g�p���郂�W���[������ʂ��邽�߂Ɏg�p���܂��B
-������SAORI���W���[�����g���ꍇ�A���W���[�����Ƃɕʂ̖��O��t���Ă��������B
-�܂��A���W���[����������g���ꍇ���A�K���G�C���A�X���K�v�ł��B
+実際にSAORIモジュールを使用する際、
+使用するモジュールを区別するために使用します。
+複数のSAORIモジュールを使う場合、モジュールごとに別の名前を付けてください。
+また、モジュールを一つだけ使う場合も、必ずエイリアスが必要です。
 </DD>
-<DT>�I�v�V����(�ȗ��\)</DT>
+<DT>オプション(省略可能)</DT>
 <DD>
-SAORI���W���[����ǂݍ��ރ^�C�~���O���w�肵�܂��B
-�upreload�v�Œ����ɂɓǂݍ��݁A
-�uloadoncall�v�Ń��W���[�����g�p���钼�O�ɓǂݍ��݁A
-�unoresident�v�Ń��W���[�����g�p���钼�O�ɓǂݍ��݁E�g�p��ɐ؂藣���ł��B
-�ȗ������ꍇ�A�uloadoncall�v�Ɠ����ł��B<BR>
-�g�p����SAORI���W���[���̃}�j���A���ɒ��ӏ������Ȃ��ꍇ�A
-�ʏ�̓I�v�V�������ȗ����č\���܂���B
+SAORIモジュールを読み込むタイミングを指定します。
+「preload」で直ちにに読み込み、
+「loadoncall」でモジュールを使用する直前に読み込み、
+「noresident」でモジュールを使用する直前に読み込み・使用後に切り離しです。
+省略した場合、「loadoncall」と等価です。<BR>
+使用するSAORIモジュールのマニュアルに注意書きがない場合、
+通常はオプションを省略して構いません。
 </DD>
 </DL>
 
 <P>
-SAORI���W���[���́AKIS�Ŏ��ۂɎg�p����O�ɑg�ݍ��ޕK�v������܂��B
-���̋L�q���AKIS��saoriregist�R�}���h�őg�ݍ���ŉ������B
+SAORIモジュールは、KISで実際に使用する前に組み込む必要があります。
+この記述か、KISのsaoriregistコマンドで組み込んで下さい。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # �������[���������saori_cpuid.dll�𒼂��ɓǂݍ���
+    # 七瀬いーうぃ氏作のsaori_cpuid.dllを直ちに読み込む
     saori : saori_cpuid.dll , cpuid , preload
 
-    # ���{�E�������option.dll��ǂݍ���
-    # ���W���[����ǂݍ��ނ̂́ucallsaori(x) option�v�����s���钼�O
+    # 橋本孔明氏作のoption.dllを読み込む
+    # モジュールを読み込むのは「callsaori(x) option」を実行する直前
     saori : option.dll , option
 </PRE></BLOCKQUOTE>
 
 
 <A name="inii18n"></A>
-<H3>3.8. �����R�[�h�w��</H3>
+<H3>3.8. 文字コード指定</H3>
 
 <P>
-�ȉ��̋L�q�́A�����̕����R�[�h���w�肷��ۂɎg�p���܂��B
-�����ǂݍ��ݓr���ŕ����R�[�h���ς�铙�̕s��������ׁA
-kawari.ini�̐擪�ŋL�q���ĉ������B
+以下の記述は、辞書の文字コードを指定する際に使用します。
+辞書読み込み途中で文字コードが変わる等の不具合を避ける為、
+kawari.iniの先頭で記述して下さい。
 </P>
 
 <BLOCKQUOTE><P>
-locale : �������R�[�h��
+locale : ＜文字コード＞
 </P></BLOCKQUOTE>
 
 <P>
-�����R�[�h�w��́A�ȉ����L���ł��B
-�ȗ������ꍇ�AShift_JIS���w�肵�����ƂɂȂ�܂��B</DD>
+文字コード指定は、以下が有効です。
+省略した場合、Shift_JISを指定したことになります。</DD>
 </P>
 
 <DIV align="center">
 <TABLE width="80%">
-<TR><TD>Shift_JIS</TD><TD>���{��</TD></TR>
+<TR><TD>Shift_JIS</TD><TD>日本語</TD></TR>
 <TR><TD>EUC-KR</TD><TD>Korean</TD></TR>
 <TR><TD>Big5</TD><TD>Chinese-Simplified</TD></TR>
 <TR><TD>GB2312</TD><TD>Chinese-Traditional</TD></TR>
-<TR><TD>ISO-8859-1</TD><TD>�����[���b�p������</TD></TR>
+<TR><TD>ISO-8859-1</TD><TD>西ヨーロッパ諸言語</TD></TR>
 </TABLE>
 </DIV>
 
 
 <A name="dict"></A>
-<H2>4. ����</H2>
+<H2>4. 辞書</H2>
 
 <P>
-"�ؘa��"�͒P��𕪗ނ��ďW�߂��u�����v�������Ă��܂��B
-�����񂾂��ł͂Ȃ��A��b����C�����C���X�N���v�g���S�ĒP��Ƃ��Ĉ����܂��B
+"華和梨"は単語を分類して集めた「辞書」を持っています。
+文字列だけではなく、会話文やインラインスクリプトも全て単語として扱います。
 </P>
 
 <P>
-�����͋N�����Ɂu�����t�@�C���v����ǂݍ��݂܂��B
-���s���ɃC�����C���X�N���v�g���g���Ď��������������邱�Ƃ��ł��܂��B
+辞書は起動時に「辞書ファイル」から読み込みます。
+実行中にインラインスクリプトを使って辞書を書き換えることもできます。
 </P>
 
 
 <A name="dictfile"></A>
-<H3>4.1. �����t�@�C���̏�����</H3>
+<H3>4.1. 辞書ファイルの書き方</H3>
 
 <P>
-���ӁI�I Phase 6.0����A�G���g�����Ɏg�p�\�ȕ�����ނ�ύX���܂��B<BR>
-�u-�v���g�p�s�ɂȂ�܂��̂ŁA�u.�v�ɒu�������Ă��������B
+注意！！ Phase 6.0から、エントリ名に使用可能な文字種類を変更します。<BR>
+「-」が使用不可になりますので、「.」に置き換えてください。
 </P>
 
 <P>
-��s�Ɂu�G���g���� : �P�� , �P�� , ...�v�̌`�ŒP���o�^���܂��B
-�u#�v����n�܂�s�̓R�����g�Ƃ��Ė������܂��B
+一行に「エントリ名 : 単語 , 単語 , ...」の形で単語を登録します。
+「#」から始まる行はコメントとして無視します。
 </P>
 
 <BLOCKQUOTE><PRE>
-    # ��b�f�[�^
-    sentence : \h���${npw}��${npp}�ŋ��R����������B\e
-    sentence : \h${npp}�ǂ��Ƃ���x�͂����ŁA�͂��[���傢�Ȃ��傢�ȁB\e
-    # ����-�ŗL����-�l�� ( npw )
-    npw : ��؈�Y , �R�{���Y
-    # ����-�ŗL����-�n�� ( npp )
-    npp : �񑊊��@ , �z���C�g�n�E�X
-    npp : ${npw}�̉�
+    # 会話データ
+    sentence : \h昨日${npw}を${npp}で偶然見かけたよ。\e
+    sentence : \h${npp}良いとこ一度はおいで、はぁーじょいなじょいな。\e
+    # 名詞-固有名詞-人名 ( npw )
+    npw : 鈴木一郎 , 山本太郎
+    # 名詞-固有名詞-地名 ( npp )
+    npp : 首相官邸 , ホワイトハウス
+    npp : ${npw}の家
 </PRE></BLOCKQUOTE>
 
 <P>
-�G���g�����͒P��̕��ނ��������ŁA"�ؘa��"�ɒP��̒u���������w�����鎞�Ɏg���܂��B
-�G���g�����Ɏg���镶���͉p����(A�`Za�`z0�`9)�A�s���I�h(.)�A�A���_�[�o�[(_)�A
-�����ł��B
-�G���g�����̒�����A�G���g���̌��A�����t�@�C���̒����ɐ����͂���܂���B<BR>
+エントリ名は単語の分類を示す物で、"華和梨"に単語の置き換えを指示する時に使います。
+エントリ名に使える文字は英数字(A～Za～z0～9)、ピリオド(.)、アンダーバー(_)、
+漢字です。
+エントリ名の長さや、エントリの個数、辞書ファイルの長さに制限はありません。<BR>
 </P>
 
 <P>
-�G���g�������J���}�u,�v�ŋ�؂��ĕ��ׁA�P��𕡐��G���g���ֈ�x��
-�o�^���邱�Ƃ��ł��܂��B
-�ȉ��̗�́unpp�v�G���g���Ɓu�ό������v�G���g���̗����Ɂu�񑊊��@�v��o�^���܂��B
+エントリ名をカンマ「,」で区切って並べ、単語を複数エントリへ一度に
+登録することもできます。
+以下の例は「npp」エントリと「観光名所」エントリの両方に「首相官邸」を登録します。
 </P>
 
 <BLOCKQUOTE><PRE>
-    npp,�ό����� : �񑊊��@
+    npp,観光名所 : 首相官邸
 </PRE></BLOCKQUOTE>
 
 <!--
 <P>
-�����P��́A�����s�ɓn���ċL�q���邱�Ƃ��ł��܂��B
-�����P��̓o�^�́u�G���g����,�G���g���� ... {�v�Ə������s�Ŏn�߁A�u}�v�����̍s��
-�I���܂��B
-�G���g�����Ɓu{�v�̊Ԃɂ́u:�v������Ȃ��̂Œ��ӂ��Ă��������B
+長い単語は、複数行に渡って記述することもできます。
+長い単語の登録は「エントリ名,エントリ名 ... {」と書いた行で始め、「}」だけの行で
+終わります。
+エントリ名と「{」の間には「:」が入らないので注意してください。
 </P>
 
 <BLOCKQUOTE><PRE>
     speech {
-    �F�͓��ւƎU��ʂ�� ���N����Ȃ��
-    �L�ӂ̉��R �����z���� �󂫖����� ���������
+    色は匂へと散りぬるを 若よ誰そ常ならん
+    有意の奥山 今日越えて 浅き夢見し 酔ゐもせす
     }
 </PRE></BLOCKQUOTE>
 -->
 
 
 <A name="doublequote"></A>
-<H3>4.2. �_�u���N�H�[�g</H3>
+<H3>4.2. ダブルクォート</H3>
 
 <P>
-�_�u���N�H�[�g(")�ň͂܂ꂽ������́A��ɂ��̂܂܏o�͂���܂��B
-�G���g���Ăяo�������_�u���N�H�[�g���ɂ����Ă��u���������s���܂���B
-�u,�v��u${}�v�u$()�v�Ƃ�����"�ؘa��"�œ��ʂ̈Ӗ������������P�ꒆ��
-�������݂����ꍇ�ɂ̓_�u���N�H�[�g���g���Ă��������B<BR>
-Phase 7.2���݁A���̂܂܂ł͒P��Ɋ܂ނ��Ƃ��o���Ȃ�������
-�u:;,(!&|)�v��8��ނł��B<BR>
-�Ȃ��A�_�u���N�H�[�g�̓����Ń_�u���N�H�[�g��\�L�������ꍇ�A
-�u\�v�ŃG�X�P�[�v���܂��B��̓I�ɂ́u"\"ABC\""�v�ƋL�q���܂��B
+ダブルクォート(")で囲まれた文字列は、常にそのまま出力されます。
+エントリ呼び出し等がダブルクォート内にあっても置き換えを行いません。
+「,」や「${}」「$()」といった"華和梨"で特別の意味を持つ文字列を単語中に
+書き込みたい場合にはダブルクォートを使ってください。<BR>
+Phase 7.2現在、そのままでは単語に含むことが出来ない文字は
+「:;,(!&|)」の8種類です。<BR>
+なお、ダブルクォートの内部でダブルクォートを表記したい場合、
+「\」でエスケープします。具体的には「"\"ABC\""」と記述します。
 </P>
 
 <BLOCKQUOTE><PRE>
@@ -505,341 +505,341 @@ Phase 7.2���݁A���̂܂܂ł͒P��Ɋ܂ނ��Ƃ��o���Ȃ�������
 </PRE></BLOCKQUOTE>
 
 <P>
-��L�̗�ł́A�uGood morning�v�ƁuU.S.A.�v�Ƃ�����̒P��Ƃ��ēo�^����܂��B
-��Ɍq�������uGood morning, U.S.A.�v�Ƃ��ēo�^�������ꍇ�ɂ́A�ȉ��̂悤��
-���Ă��������B
+上記の例では、「Good morning」と「U.S.A.」という二つの単語として登録されます。
+一つに繋がった「Good morning, U.S.A.」として登録したい場合には、以下のように
+してください。
 </P>
 
 <BLOCKQUOTE><PRE>
     sentence : Good morning"," U.S.A.
-    ����
+    又は
     sentence : "Good morning, U.S.A."
 </PRE></BLOCKQUOTE>
 
 
 
 <A name="entrycall"></A>
-<H3>4.3. �G���g���Ăяo��</H3>
+<H3>4.3. エントリ呼び出し</H3>
 
 <P>
-�u${�G���g����}�v�Ƃ����L�q���u�G���g���Ăяo���v�ƌĂт܂��B
+「${エントリ名}」という記述を「エントリ呼び出し」と呼びます。
 </P>
 
 <P>
-�P��̒��Łu${�G���g����}�v�ƋL�q����ƁA�����G���g���ɓo�^����Ă���P��̒�����
-�C�ӂ̈�P���I�яo���A�u�������܂��B
-�Y������P�ꂪ������Ȃ������Ƃ��́A�󔒕�����ɒu�������܂��B
-�܂��A�u���������P��ɂ��G���g���Ăяo�����܂܂�Ă���ꍇ�ɂ́A�ēx�u���������s���܂��B
+単語の中で「${エントリ名}」と記述すると、同じエントリに登録されている単語の中から
+任意の一単語を選び出し、置き換えます。
+該当する単語が見つからなかったときは、空白文字列に置き換えます。
+また、置き換えた単語にもエントリ呼び出しが含まれている場合には、再度置き換えを行います。
 <!--
-(�u�������[�v����w���������ǂ��Ȃ��?�v�Ǝv�������Ȃ��͉s���B
-�ō�30�i(�v���O�������̒萔�ɂĎw��)�ōċA��ł��؂�܂��B)
+(「無限ループする指定をしたらどうなるの?」と思ったあなたは鋭い。
+最高30段(プログラム中の定数にて指定)で再帰を打ち切ります。)
 -->
 </P>
 
 <BLOCKQUOTE><PRE>
-    npw : ��؈�Y , �R�{���Y
-    sentence : ${npw}����
+    npw : 鈴木一郎 , 山本太郎
+    sentence : ${npw}さん
 </PRE></BLOCKQUOTE>
 
 <P>
-��L�̗�ł́Asentence�̓��e�́u��؈�Y����v���́u�R�{���Y����v�ɂȂ�܂��B
+上記の例では、sentenceの内容は「鈴木一郎さん」又は「山本太郎さん」になります。
 </P>
 
 
 <P>
-�u${�G���g��1&�G���g��2}�v�ƋL�q����ƁA�G���g��1�ƃG���g��2�̗����ɓo�^����Ă���
-�P��̒�����C�ӂ̈�P���I�яo���A�u�������܂��B
+「${エントリ1&エントリ2}」と記述すると、エントリ1とエントリ2の両方に登録されている
+単語の中から任意の一単語を選び出し、置き換えます。
 </P>
 
 <BLOCKQUOTE><PRE>
-    JR�̉w   : �ڍ� , �b��� , �a�J , ���h , ��X�� , �V�h
-    ���}�̉w : �ڍ� , �剪�R , �΃��u , ���R���u , �a�J
-    sentence : ${JR�̉w&���}�̉w}�ő҂����킹
+    JRの駅   : 目黒 , 恵比寿 , 渋谷 , 原宿 , 代々木 , 新宿
+    東急の駅 : 目黒 , 大岡山 , 緑ヶ丘 , 自由が丘 , 渋谷
+    sentence : ${JRの駅&東急の駅}で待ち合わせ
 </PRE></BLOCKQUOTE>
 
 <P>
-��L�̗�ł́A�u${JR�̉w&���}�̉w}�v���u�ڍ��v���́u�a�J�v�ɒu���������A
-sentence�́u�ڍ��ő҂����킹�v���́u�a�J�ő҂����킹�v�ɂȂ�܂��B
+上記の例では、「${JRの駅&東急の駅}」が「目黒」又は「渋谷」に置き換えられ、
+sentenceは「目黒で待ち合わせ」又は「渋谷で待ち合わせ」になります。
 </P>
 
 
 
 <A name="historycall"></A>
-<H3>4.4. �����Q��</H3>
+<H3>4.4. 履歴参照</H3>
 
 <P>
-�u${����}�v�Ƃ�������ȃG���g���Ăяo�����u�����Q�Ɓv�ƌĂт܂��B
+「${数字}」という特殊なエントリ呼び出しを「履歴参照」と呼びます。
 </P>
 
 <P>
-�����Q�Ƃ́A���������Œu���������P����ēx�Q�Ƃ��鎞�Ɏg���܂��B
+履歴参照は、同じ文脈で置き換えた単語を再度参照する時に使います。
 </P>
 
 <BLOCKQUOTE><PRE>
-    n : ��
-    food : ��
-    sentence : ${n}�̂悤��${food}�A${1}�̂悤��${0}�B
+    n : 石
+    food : 梨
+    sentence : ${n}のような${food}、${1}のような${0}。
 </PRE></BLOCKQUOTE>
 
 <P>
-��L�̗�ł́A${0}��${n}��u�����������ʂɁA${1}��${food}��u�����������ʂ�
-�Ȃ�Asentence�́u�΂̂悤�ȗ��A���̂悤�Ȑ΁B�v�ɂȂ�܂��B
+上記の例では、${0}は${n}を置き換えた結果に、${1}は${food}を置き換えた結果に
+なり、sentenceは「石のような梨、梨のような石。」になります。
 </P>
 
 
 
 <A name="systementry"></A>
-<H3>4.5. �V�X�e���G���g��</H3>
+<H3>4.5. システムエントリ</H3>
 
 <P>
-���ӁI�I Phase 6.0����A�G���g�����Ɏg�p�\�ȕ�����ނ�ύX���܂��B<BR>
-�u-�v���g�p�s�ɂȂ�܂��̂ŁA�u.�v�ɒu�������Ă��������B
+注意！！ Phase 6.0から、エントリ名に使用可能な文字種類を変更します。<BR>
+「-」が使用不可になりますので、「.」に置き換えてください。
 </P>
 
 <P>
-"�ؘa��"�́A�{�̂���ʒm���ꂽ�����ȉ��̃G���g���ɏ������݂܂��B<BR>
-�ڍׂ́u�����B�v�����y�[�W��SHIORI�d�l�����Q�Ƃ��ĉ������B
+"華和梨"は、本体から通知された情報を以下のエントリに書き込みます。<BR>
+詳細は「何か。」公式ページのSHIORI仕様書を参照して下さい。
 </P>
 
 <DIV align="center">
 <TABLE width="80%">
-<TR><TD>system.Ghost</TD><TD>�{�̂���ʒm���ꂽ�����̃S�[�X�g��</TD></TR>
-<TR><TD>system.OtherGhost</TD><TD>�ғ����̑��̃S�[�X�g�̖��O</TD></TR>
-<TR><TD>system.OtherGhostEx</TD><TD>�ғ����̑��̃S�[�X�g�̖��O(�T�[�t�B�X�ԍ��t)</TD></TR>
-<TR><TD>system.Reference0�`7</TD><TD>�C�x���g����Referense0�`7</TD></TR>
-<TR><TD>system.Sender</TD><TD>�b���|���Ă����S�[�X�g���A���̓V�X�e����</TD></TR>
-<TR><TD>system.Sender.Path</TD><TD>�b���|���Ă����o�H(local/unknown/external)</TD></TR>
-<TR><TD>system.Age</TD><TD>COMMUNICATE�̉�</TD></TR>
-<TR><TD>system.Sentence</TD><TD>�b���|����ꂽ���e</TD></TR>
-<TR><TD>system.ID</TD><TD>�v�����ꂽ���\�[�XID</TD></TR>
-<TR><TD>system.Surface</TD><TD>�b���|���Ă����S�[�X�g�̃T�[�t�B�X�ԍ�</TD></TR>
+<TR><TD>system.Ghost</TD><TD>本体から通知された自分のゴースト名</TD></TR>
+<TR><TD>system.OtherGhost</TD><TD>稼動中の他のゴーストの名前</TD></TR>
+<TR><TD>system.OtherGhostEx</TD><TD>稼動中の他のゴーストの名前(サーフィス番号付)</TD></TR>
+<TR><TD>system.Reference0～7</TD><TD>イベント引数Referense0～7</TD></TR>
+<TR><TD>system.Sender</TD><TD>話し掛けてきたゴースト名、又はシステム名</TD></TR>
+<TR><TD>system.Sender.Path</TD><TD>話し掛けてきた経路(local/unknown/external)</TD></TR>
+<TR><TD>system.Age</TD><TD>COMMUNICATEの回数</TD></TR>
+<TR><TD>system.Sentence</TD><TD>話し掛けられた内容</TD></TR>
+<TR><TD>system.ID</TD><TD>要求されたリソースID</TD></TR>
+<TR><TD>system.Surface</TD><TD>話し掛けてきたゴーストのサーフィス番号</TD></TR>
 </TABLE>
 </DIV>
 
 <P>
-�ȉ��̃G���g���́A�C�����C���X�N���v�g�ŏ����������݂܂��B
-�����͖{�̂ւ̉����Ɉ��g�p����ƁA"�ؘa��"�������I�ɏ������܂��B
+以下のエントリは、インラインスクリプトで情報を書き込みます。
+これらは本体への応答に一回使用すると、"華和梨"が自動的に消去します。
 </P>
 
 <DIV align="center">
 <TABLE width="80%">
 <TR><TD>system.communicate</TD><TD>
-�S�[�X�g�����������ނƁA���̃S�[�X�g��COMMUNICATE�Řb���|����<BR>
-"stop"���������ނƁACOMMUNICATE��ł��؂�</TD></TR>
-<TR><TD>system.Response0�`7</TD><TD>
-�������񂾓��e��Reference0�`7�Ƃ���COMMUNICATE�ő��M
+ゴースト名を書き込むと、そのゴーストにCOMMUNICATEで話し掛ける<BR>
+"stop"を書き込むと、COMMUNICATEを打ち切る</TD></TR>
+<TR><TD>system.Response0～7</TD><TD>
+書き込んだ内容をReference0～7としてCOMMUNICATEで送信
 </TD></TR>
 <TR><TD>system.BalloonOffset</TD><TD>
-�o���[���̃I�t�Z�b�g�ʒu
+バルーンのオフセット位置
 </TABLE>
 </DIV>
 
 <P>
-�ȉ��̃G���g���́u�����B�v���w�肵���P�ꕪ�ނɈ�v����P���v�����Ă����Ƃ���
-�Ăяo����܂��B
+以下のエントリは「何か。」が指定した単語分類に一致する単語を要求してきたときに
+呼び出されます。
 </P>
 
 <DIV align="center">
 <TABLE width="80%">
-<TR><TD>compatible.ms</TD><TD>����-�l</TD></TR>
-<TR><TD>compatible.mz</TD><TD>����-���@��</TD></TR>
-<TR><TD>compatible.mc</TD><TD>����-�Ж�</TD></TR>
-<TR><TD>compatible.mh</TD><TD>����-�X��</TD></TR>
-<TR><TD>compatible.mt</TD><TD>����-�Z</TD></TR>
-<TR><TD>compatible.me</TD><TD>����-�H��</TD></TR>
-<TR><TD>compatible.mp</TD><TD>����-�n���݂����Ȃ���</TD></TR>
-<TR><TD>compatible.m</TD><TD>����-�����</TD></TR>
-<TR><TD>compatible.dms</TD><TD>�u�`�Ɂ`����`�v�I�ȁA�i���������A�����ꂽ���߂̖���</TD></TR>
+<TR><TD>compatible.ms</TD><TD>名詞-人</TD></TR>
+<TR><TD>compatible.mz</TD><TD>名詞-無機物</TD></TR>
+<TR><TD>compatible.mc</TD><TD>名詞-社名</TD></TR>
+<TR><TD>compatible.mh</TD><TD>名詞-店名</TD></TR>
+<TR><TD>compatible.mt</TD><TD>名詞-技</TD></TR>
+<TR><TD>compatible.me</TD><TD>名詞-食物</TD></TR>
+<TR><TD>compatible.mp</TD><TD>名詞-地名みたいなもの</TD></TR>
+<TR><TD>compatible.m</TD><TD>名詞-非限定</TD></TR>
+<TR><TD>compatible.dms</TD><TD>「～に～する～」的な、品詞が複数連結された長めの名詞</TD></TR>
 </TABLE>
 </DIV>
 
 
 <A name="evententry"></A>
-<H3>4.6. �C�x���g�G���g��</H3>
+<H3>4.6. イベントエントリ</H3>
 
 <P>
-���ӁI�I Phase 6.0����A�G���g�����Ɏg�p�\�ȕ�����ނ�ύX���܂��B<BR>
-�u-�v���g�p�s�ɂȂ�܂��̂ŁA�u.�v�ɒu�������Ă��������B
+注意！！ Phase 6.0から、エントリ名に使用可能な文字種類を変更します。<BR>
+「-」が使用不可になりますので、「.」に置き換えてください。
 </P>
 
 <P>
-�uevent.�C�x���g���v�`���̃G���g���́AOnClose���̃C�x���g�����������ۂɌĂ΂�
-�܂��B����OnGhostChanging�C�x���g�����������Ƃ���ƁA�Ή�����G���g���ł���
-event.OnGhostChanging�G���g�����Ă΂�܂��Bsentence�G���g���Ɠ����悤�ɋL�q
-���ĉ������B<BR>
-����ǉ������C�x���g��"�ؘa��"���̕ύX�Ȃ��őΉ��ł��܂��B<BR>
-�C�x���g�̕⏕��񂪋L�q����Ă���Reference0�`Reference7�́A���ꂼ��V�X�e��
-�G���g����system.Reference0�`system.Reference7�ɏ������܂�܂��B�܂��A����
-�����C�x���g����system.EventName�G���g���ɏ������܂�܂��B
+「event.イベント名」形式のエントリは、OnClose等のイベントが発生した際に呼ばれ
+ます。仮にOnGhostChangingイベントが発生したとすると、対応するエントリである
+event.OnGhostChangingエントリが呼ばれます。sentenceエントリと同じように記述
+して下さい。<BR>
+今後追加されるイベントも"華和梨"側の変更なしで対応できます。<BR>
+イベントの補助情報が記述されているReference0～Reference7は、それぞれシステム
+エントリのsystem.Reference0～system.Reference7に書き込まれます。また、発生
+したイベント名はsystem.EventNameエントリに書き込まれます。
 </P>
 
 <P>
-�������̃C�x���g��shiori�ŏ������邱�Ƃ��K�{�ɂȂ��Ă��܂��̂ŁA�K���Ή�����
-�X�N���v�g���L�q���Ă��������B<BR>
-<!-- �K�{�łȂ��C�x���g�̋L�q���ȗ������ꍇ�ɂ́Apiro���������s���܂��B -->
+いくつかのイベントはshioriで処理することが必須になっていますので、必ず対応する
+スクリプトを記述してください。<BR>
+<!-- 必須でないイベントの記述を省略した場合には、piroが処理を行います。 -->
 </P>
 
 <P>
-�C�x���g�̏ڍׂ́A�u�����B�v�����y�[�W��SHIORI�d�l�����Q�Ƃ��ĉ������B
+イベントの詳細は、「何か。」公式ページのSHIORI仕様書を参照して下さい。
 </P>
 
 <P>
-�ȉ��̃C�x���g��"�ؘa��"�������I�ɌĂяo���܂��B
+以下のイベントは"華和梨"が内部的に呼び出します。
 </P>
 
 <DIV align="center">
 <TABLE width="80%">
-<TR><TD>system.OnLoad</TD><TD>�ǂݍ��݊����C�x���g</TD></TR>
-<TR><TD>system.OnUnload</TD><TD>�؂藣���C�x���g</TD></TR>
-<TR><TD>system.OnTeach</TD><TD>SHIORI/2.4 TEACH�J�n�C�x���g<BR>
-���[�U�[�̋������P���system.Sentence�ɓ����Ă���</TD></TR>
-<TR><TD>system.OnTranslate</TD><TD> TRANSLATE SHIORI/2.6�C�x���g<BR>
-�u���Ώۂ�system.Sentence�ɓ����Ă���</TD></TR>
-<TR><TD>system.OnResponse</TD><TD>�����C�x���g</TD></TR>
-<TR><TD>system.OnResponseUnknown</TD><TD>�����s���C�x���g</TD></TR>
-<TR><TD>system.OnNotifyGhost</TD><TD>�S�[�X�g���ʒm�C�x���g</TD></TR>
-<TR><TD>system.OnNotifyOther</TD><TD>���S�[�X�g���ʒm�C�x���g</TD></TR>
-<TR><TD>system.OnGetStatus</TD><TD>�X�e�[�^�X�擾�C�x���g</TD></TR>
-<TR><TD>system.OnEventUnknown</TD><TD>�X�N���v�g�Ŗ���`��SHIORI/2.2 �C�x���g<BR>
-�C�x���g����system.EventName�ɓ����Ă���</TD></TR>
+<TR><TD>system.OnLoad</TD><TD>読み込み完了イベント</TD></TR>
+<TR><TD>system.OnUnload</TD><TD>切り離しイベント</TD></TR>
+<TR><TD>system.OnTeach</TD><TD>SHIORI/2.4 TEACH開始イベント<BR>
+ユーザーの教えた単語はsystem.Sentenceに入っている</TD></TR>
+<TR><TD>system.OnTranslate</TD><TD> TRANSLATE SHIORI/2.6イベント<BR>
+置換対象はsystem.Sentenceに入っている</TD></TR>
+<TR><TD>system.OnResponse</TD><TD>応答イベント</TD></TR>
+<TR><TD>system.OnResponseUnknown</TD><TD>応答不明イベント</TD></TR>
+<TR><TD>system.OnNotifyGhost</TD><TD>ゴースト名通知イベント</TD></TR>
+<TR><TD>system.OnNotifyOther</TD><TD>他ゴースト名通知イベント</TD></TR>
+<TR><TD>system.OnGetStatus</TD><TD>ステータス取得イベント</TD></TR>
+<TR><TD>system.OnEventUnknown</TD><TD>スクリプトで未定義のSHIORI/2.2 イベント<BR>
+イベント名はsystem.EventNameに入っている</TD></TR>
 </TABLE>
 </DIV>
 
 
 
 <A name="matchentry"></A>
-<H3>4.7. �}�b�`�G���g����COMMUNICATE</H3>
+<H3>4.7. マッチエントリとCOMMUNICATE</H3>
 
 
 <P>
-�u["�P��" , "�P��" , ...]�v�̌`����������ȃG���g�����u�}�b�`�G���g���v�ƌĂт܂��B
-�}�b�`�G���g���́A�R�~���j�P�[�g�{�b�N�X����̓��͂�A���̃S�[�X�g����̌Ăт�����
-�Ԏ�������uCOMMUNICATE�v�����ŗp���܂��B
+「["単語" , "単語" , ...]」の形をした特殊なエントリを「マッチエントリ」と呼びます。
+マッチエントリは、コミュニケートボックスからの入力や、他のゴーストからの呼びかけに
+返事をする「COMMUNICATE」処理で用います。
 </P>
 
 <P>
-�R�~���j�P�[�g�̍ۂɁu�P��v���܂ޕ��������Ă����ꍇ�Ă΂�܂��B
-�����̒P����������ꍇ�A�������P��S�Ă��܂܂�镶�������Ă����ꍇ�Ă΂�܂��B
+コミュニケートの際に「単語」を含む文が送られてきた場合呼ばれます。
+複数の単語を書いた場合、書いた単語全てが含まれる文が送られてきた場合呼ばれます。
 </P>
 
 <BLOCKQUOTE><PRE>
-    ["�O��" , "����"] : �O�閾���͖����ˁB
+    ["徹夜" , "眠い"] : 徹夜明けは眠いね。
 </PRE></BLOCKQUOTE>
 
 <P>
-��L�̗�ł́A�u�O��v�Ɓu�����v��2�P����܂ޕ���COMMUNICATE�ő����Ă������A
-�u�O�閾���͖����ˁB�v��Ԃ��܂��B
+上記の例では、「徹夜」と「眠い」の2単語を含む文がCOMMUNICATEで送られてきた時、
+「徹夜明けは眠いね。」を返します。
 </P>
 
 <P>
-�}�b�`�G���g���̌������J�n����O�ɁA�usystem.OnResponse�v�C�x���g���������܂��B
-�usystem.OnResponse�v�C�x���g�łȂ�炩�̕������Ԃ����ꍇ�ɂ́A�}�b�`�G���g����
-�����𒆎~���܂��B
-�}�b�`�G���g���ɊY��������̂��������ɂ́A�usystem.OnResponseUnknown�v�C�x���g���������܂��B
+マッチエントリの検索を開始する前に、「system.OnResponse」イベントが発生します。
+「system.OnResponse」イベントでなんらかの文字列を返した場合には、マッチエントリの
+検索を中止します。
+マッチエントリに該当するものが無い時には、「system.OnResponseUnknown」イベントが発生します。
 </P>
 
 <P>
-COMMUNICATE�ŕԎ���Ԃ��ۂ�system.Response0�`system.Response7�G���g����
-�����������ނƁA���e�����ꂼ��Reference0�`Reference7�ɃZ�b�g���đ���S�[�X�g��
-�n���܂��B�ڍׂ�SHIORI/2.3b�K�i�̎d�l�����Q�Ƃ��ĉ������B
+COMMUNICATEで返事を返す際にsystem.Response0～system.Response7エントリに
+何か書き込むと、内容をそれぞれReference0～Reference7にセットして相手ゴーストに
+渡します。詳細はSHIORI/2.3b規格の仕様書を参照して下さい。
 </P>
 
 <A name="resourceentry"></A>
-<H3>4.8. ���\�[�X�G���g��</H3>
+<H3>4.8. リソースエントリ</H3>
 
 <P>
-�uresource.���\�[�X���v�`���̃G���g���́A�{�̂���l�b�g���[�N�X�V��URL�A
-�������߃��j���[����v�����ꂽ�ۂɌĂ΂�܂��B
-���\�[�X�̏ڍׂ́A�u�����B�v�����y�[�W��SHIORI�d�l�����Q�Ƃ��ĉ������B
+「resource.リソース名」形式のエントリは、本体からネットワーク更新先URL、
+おすすめメニュー等を要求された際に呼ばれます。
+リソースの詳細は、「何か。」公式ページのSHIORI仕様書を参照して下さい。
 </P>
 
 
 <A name="inlinescript"></A>
-<H2>5. �C�����C���X�N���v�g</H2>
+<H2>5. インラインスクリプト</H2>
 
 <P>
-�u�ؘa���C�����C���X�N���v�g(Kawari Inline Script)�v��p���邱�Ƃɂ��A
-�C�x���g�����A�����̓��e�̓��I�ȕύX�A�G���g�����e�ɂ��������򓙂������ł��܂��B
-��{�I�ȃX�N���v�g�̏����́A�u$(�R�}���h�� ����1 ����2�c)�v�̌`���ł��B
-(�ȒP�Ɍ����΁uBash(Bourne Again SHell)�̃T�u�Z�b�g�v�ł��B)
-����d�l�̏ڍׂ́A�Y�t�́u�ؘa���C�����C���X�N���v�g ���t�@�����X�}�j���A���v
-���Q�Ƃ��ĉ������B
+「華和梨インラインスクリプト(Kawari Inline Script)」を用いることにより、
+イベント処理、辞書の内容の動的な変更、エントリ内容による条件分岐等を実現できます。
+基本的なスクリプトの書式は、「$(コマンド名 引数1 引数2…)」の形式です。
+(簡単に言えば「Bash(Bourne Again SHell)のサブセット」です。)
+言語仕様の詳細は、添付の「華和梨インラインスクリプト リファレンスマニュアル」
+を参照して下さい。
 </P>
 
 <P>
-"�ؘa���S�[�X�g"��b�f�[�^�t�@�C��(ghost-kawari.txt)�̒��ɁA�C�����C���X�N��
-�v�g�̗p�Ⴊ����܂��B�R�~���j�P�[�g�{�b�N�X����ȒP�ɌĂׂ�悤�ɂȂ��Ă��܂�
-�̂ŁA���낢��V��ł݂āA������m���߂�Ɨǂ��ł��傤�B
+"華和梨ゴースト"会話データファイル(ghost-kawari.txt)の中に、インラインスクリ
+プトの用例があります。コミュニケートボックスから簡単に呼べるようになっています
+ので、いろいろ遊んでみて、動作を確かめると良いでしょう。
 </P>
 
 
 
 <A name="crypt"></A>
-<H2>6. �Í�������</H2>
+<H2>6. 暗号化辞書</H2>
 
 <P>
-�l�^�����΂�ɂ������邽�߂ɁA�����t�@�C���ɊȒP�ȈÍ������{�����Ƃ��ł��܂��B<BR>
-�Í����ɂ͕t����kawari_encode.exe��p���܂��B<BR>
-�g�p���@�́ADOS�v�����v�g�ňȉ��̂悤�ɓ��͂��܂��B�����c�[���͍��Ȃ��̂ŁA
-�����t�@�C������ŕҏW����ꍇ�A�K���Í����O�̃t�@�C�����c���Ă����ĉ������B
+ネタをよりばれにくくするために、辞書ファイルに簡単な暗号化を施すことができます。<BR>
+暗号化には付属のkawari_encode.exeを用います。<BR>
+使用方法は、DOSプロンプトで以下のように入力します。復号ツールは作らないので、
+辞書ファイルを後で編集する場合、必ず暗号化前のファイルを残しておいて下さい。
 </P>
 
 <BLOCKQUOTE><PRE>
-  kawari_encode.exe �����t�@�C����1 �����t�@�C����2 ...
+  kawari_encode.exe 辞書ファイル名1 辞書ファイル名2 ...
 </PRE></BLOCKQUOTE>
 
 <P>
-�����t�@�C���̃t�@�C�����̊g���q���u.kaw�v�ɕς����t�@�C�����A�Í������ꂽ
-�����t�@�C���ł��B<BR>
-�����t�@�C�����A�u:crypt�v�Ə����ꂽ�s����A�u:endcrypt�v�Ə����ꂽ�s�܂ł�
-�Í����̑ΏۂƂȂ�܂��B����ȊO�̍s�͌��̂܂܎c����܂��B
+辞書ファイルのファイル名の拡張子を「.kaw」に変えたファイルが、暗号化された
+辞書ファイルです。<BR>
+辞書ファイル中、「:crypt」と書かれた行から、「:endcrypt」と書かれた行までが
+暗号化の対象となります。それ以外の行は元のまま残されます。
 </P>
 
 <BLOCKQUOTE><PRE>
-  �� dict-sample.txt
+  例 dict-sample.txt
     #############################
-    # ���쌏�\���Ȃ�
+    # 著作件表示など
     #############################
     
-    # ��������Í���
+    # ここから暗号化
     :crypt
-    # ��b�f�[�^
-    sentence : \h���${npw}��${npp}�ŋ��R����������B\e
-    sentence : \h${npp}�ǂ��Ƃ���x�͂����ŁA�͂��[���傢�Ȃ��傢�ȁB\e
-    # ����-�ŗL����-�l�� ( npw )
-    npw : ��؈�Y , �R�{���Y
-    # ����-�ŗL����-�n�� ( npp )
-    npp : �񑊊��@ , �z���C�g�n�E�X
-    npp : ${npw}�̉�
+    # 会話データ
+    sentence : \h昨日${npw}を${npp}で偶然見かけたよ。\e
+    sentence : \h${npp}良いとこ一度はおいで、はぁーじょいなじょいな。\e
+    # 名詞-固有名詞-人名 ( npw )
+    npw : 鈴木一郎 , 山本太郎
+    # 名詞-固有名詞-地名 ( npp )
+    npp : 首相官邸 , ホワイトハウス
+    npp : ${npw}の家
     :endcrypt
-    # �����܂ňÍ���
+    # ここまで暗号化
 </PRE></BLOCKQUOTE>
 
 <P>
-���̃t�@�C�����Í�������ƁA���̂悤�ȃt�@�C������������܂��B
+このファイルを暗号化すると、次のようなファイルが生成されます。
 </P>
 
 <BLOCKQUOTE><PRE>
-  �� dict-sample.kaw
+  例 dict-sample.kaw
     #############################
-    # ���쌏�\���Ȃ�
+    # 著作件表示など
     #############################
     
-    # ��������Í���
+    # ここから暗号化
     !KAWA00007+x+PQMPaQttcGlz
-    !KAWA0000v6miuKmir6ns9uyQpHY+CjDot6K8u7FoPui3ory8sWgLejoNf3R(�㗪)
-    !KAWA0000v6miuKmir6ns9uyQpOi3ory8sQIFaGhoBGh/fCAJFWgDaGZoaGg(�㗪)
+    !KAWA0000v6miuKmir6ns9uyQpHY+CjDot6K8u7FoPui3ory8sWgLejoNf3R(後略)
+    !KAWA0000v6miuKmir6ns9uyQpOi3ory8sQIFaGhoBGh/fCAJFWgDaGZoaGg(後略)
     !KAWA00007+wAcncg4XQLAWEAcncg4XMBAHLs5OyivLvs5Q==
     !KAWA0000ory77PbsAicAFnwgA3bs4Ox3fwcQDgwDdg==
     !KAWA00007+wAcncg4XQLAWEAcncg4Q8DAHLs5OyivLzs5Q==
     !KAWA0000ory87PbscD8NJnh9CW3s4OxpF2kjaWhpBGkDaWppdQ==
     !KAWA0000ory87Pbs6LeivLuxaAJ+BA==
-    # �����܂ňÍ���
+    # ここまで暗号化
 </PRE></BLOCKQUOTE>
 
 <P>
-�������ꂽ�Í��������t�@�C���udict-*.kaw�v���Akawari.ini�Ŏw�肵�ĉ������B
-�Í����t�@�C���̊g���q�́A.kaw�ȊO�ɕύX���Ă����v�ł��B
+生成された暗号化辞書ファイル「dict-*.kaw」を、kawari.iniで指定して下さい。
+暗号化ファイルの拡張子は、.kaw以外に変更しても大丈夫です。
 </P>
 
 

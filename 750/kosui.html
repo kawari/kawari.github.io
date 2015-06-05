@@ -1,10 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">
 <HTML lang="ja">
 <HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=SHIFT_JIS">
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <META http-equiv="Content-Script-Type" content="text/javascript">
 <META http-equiv="Content-Style-Type" content="text/css">
-<TITLE>�K���}�j���A��</TITLE>
+<TITLE>幸水マニュアル</TITLE>
 
 <STYLE>
 <!--
@@ -112,21 +112,21 @@ SPAN.tt {
 <DIV align="center">
 <DIV class="title">
 	<P class="h1">
-	�v���O���}�u����AI���W���[��
+	プログラマブル準AIモジュール
 	</P><P class="h1">
-	�u"�ؘa��" for ����ȊO�̉����ȊO�̉����v<BR>
-	�K���}�j���A��
+	「"華和梨" for あれ以外の何か以外の何か」<BR>
+	幸水マニュアル
         </P>
 	<DIV align="right">
 		<P>
 		2002/05/25<BR>
 		Phase 7.4.0
 		</P><P>
-		�ؘa���J���`�[��<BR><BR>
+		華和梨開発チーム<BR><BR>
 		NAKAUE.T (Meister)<BR>
-		���T (�UMeister)<BR>
-		����<BR>
-		���Ɓ[
+		夢乃 (偽Meister)<BR>
+		酔狂<BR>
+		さとー
 		</P>
 	</DIV>
 </DIV>
@@ -135,134 +135,134 @@ SPAN.tt {
 <H2>Index</H2>
 
 <BLOCKQUOTE>
-<A href="#youto">1. �p�r</A><BR>
-<A href="#howtouse">2. �N�����@</A><BR>
-�@<A href="#interpretermode">2.1. �C���^�[�v���^���[�h</A><BR>
-�@<A href="#debuggermode">2.2. �f�o�b�K���[�h</A><BR>
-<A href="#operation">3. ������@</A><BR>
-�@<A href="#echomode">3.1. echo���[�h</A><BR>
-�@<A href="#commandmode">3.2. command���[�h</A><BR>
-<A href="#quit">4. �I�����@</A><BR>
+<A href="#youto">1. 用途</A><BR>
+<A href="#howtouse">2. 起動方法</A><BR>
+　<A href="#interpretermode">2.1. インタープリタモード</A><BR>
+　<A href="#debuggermode">2.2. デバッガモード</A><BR>
+<A href="#operation">3. 操作方法</A><BR>
+　<A href="#echomode">3.1. echoモード</A><BR>
+　<A href="#commandmode">3.2. commandモード</A><BR>
+<A href="#quit">4. 終了方法</A><BR>
 </BLOCKQUOTE>
 
 <A name="youto"></A>
-<H2>1. �p�r</H2>
+<H2>1. 用途</H2>
 
 <P>
-"�K��(��������)"�̓R���\�[���œ��삷��ؘa���C���^�[�v���^�ł��B
-�ғ����̃S�[�X�g�ؘ̉a���Ɛڑ����A�f�o�b�O��Ƃ��s�����Ƃ��o���܂��B
+"幸水(こうすい)"はコンソールで動作する華和梨インタープリタです。
+稼動中のゴーストの華和梨と接続し、デバッグ作業を行うことも出来ます。
 </P>
 
 
 <A name="howtouse"></A>
-<H2>2. �N�����@</H2>
+<H2>2. 起動方法</H2>
 
 <P>
-"kosui.exe"���_�u���N���b�N���邩�A"kosui.exe"�̑��݂���t�H���_��
-�R���\�[�����J���A"kosui.exe"�Ɠ��͂���ƋN�����܂��B
+"kosui.exe"をダブルクリックするか、"kosui.exe"の存在するフォルダで
+コンソールを開き、"kosui.exe"と入力すると起動します。
 </P>
 
 <P>
-���̎��A�ғ����̃S�[�X�g�����邩�ǂ����ɂ���āA�K���̓���͑傫��
-�u�C���^�[�v���^���[�h�v�Ɓu�f�o�b�K���[�h�v�̓�ɕ�����܂��B
+この時、稼動中のゴーストがあるかどうかによって、幸水の動作は大きく
+「インタープリタモード」と「デバッガモード」の二つに分かれます。
 </P>
 
 
 <A name="interpretermode"></A>
-<H3>2.1. �C���^�[�v���^���[�h</H3>
+<H3>2.1. インタープリタモード</H3>
 
 <P>
-�ғ����̃S�[�X�g��������Ȃ��ꍇ�A�K���̓C���^�[�v���^���[�h�ŋN�����܂��B
-�C���^�[�v���^���[�h�ł́A�K���ɓ������ꂽ�ؘa�����W���[�����g�p���܂��B
-�܂��A�ғ����̃S�[�X�g������ꍇ�ł��A�N����ɐڑ�����S�[�X�g�Ƃ���0�Ԃ�I�Ԃ�
-�C���^�[�v���^���[�h�ŋN�����܂��B
+稼動中のゴーストが見つからない場合、幸水はインタープリタモードで起動します。
+インタープリタモードでは、幸水に内蔵された華和梨モジュールを使用します。
+また、稼動中のゴーストがある場合でも、起動後に接続するゴーストとして0番を選ぶと
+インタープリタモードで起動します。
 </P>
 
 <P>
-�C���^�[�v���^���[�h�ŋN������ƁA�K����"kosui.exe"�����݂���t�H���_��
-kawari.ini��ǂ݁Akawari.ini�Ŏw�肵�������t�@�C����ǂݍ��݂܂��B
-���̌�Asystem.OnLoad�G���g�����������ꍇ�A�����]�����Ă��烆�[�U��
-�L�[���͂��󂯕t�����ԂɂȂ�܂��B
+インタープリタモードで起動すると、幸水は"kosui.exe"が存在するフォルダの
+kawari.iniを読み、kawari.iniで指定した辞書ファイルを読み込みます。
+その後、system.OnLoadエントリがあった場合、これを評価してからユーザの
+キー入力を受け付ける状態になります。
 </P>
 
 
 <A name="debuggermode"></A>
-<H3>2.2. �f�o�b�K���[�h</H3>
+<H3>2.2. デバッガモード</H3>
 
 <P>
-�ғ����̃S�[�X�g������ꍇ�A�K���̓f�o�b�K���[�h�ŋN�����܂��B
-�f�o�b�K���[�h�ł́A�K���̓S�[�X�g�ɑ΂���SAKURA API���g�����C�x���g
-�ʒm���s���܂��B�ʒm�o����C�x���g��2��ނ���A��q����uecho���[�h�v
-�ł́uShioriEcho�v�C�x���g�A�ucommand���[�h�v�ł́uKawariCommand�v
-�C�x���g���ʒm�ł��܂��B
+稼動中のゴーストがある場合、幸水はデバッガモードで起動します。
+デバッガモードでは、幸水はゴーストに対してSAKURA APIを使ったイベント
+通知を行います。通知出来るイベントは2種類あり、後述する「echoモード」
+では「ShioriEcho」イベント、「commandモード」では「KawariCommand」
+イベントが通知できます。
 </P>
 
 <P>
-�ғ����̃S�[�X�g���ؘa���S�[�X�g�ŁA�S�[�X�g��kawari.ini��
-�udebug : debugger�v�Ə����Ă���ꍇ�A�K���͏�L�̃C�x���g���p���āA
-�ғ����̃S�[�X�g�ؘ̉a�����W���[���Ɛڑ����܂��B
-�ڑ�����ƁA�K���͉ғ����̃S�[�X�g�𑀍삷�邱�Ƃ��o���܂��B
-���̍ہA�C�x���g�ɑΉ�����G���g�����L�q����K�v�͂���܂���B
+稼動中のゴーストが華和梨ゴーストで、ゴーストのkawari.iniに
+「debug : debugger」と書いてある場合、幸水は上記のイベント利用して、
+稼動中のゴーストの華和梨モジュールと接続します。
+接続すると、幸水は稼動中のゴーストを操作することが出来ます。
+この際、イベントに対応するエントリを記述する必要はありません。
 </P>
 
 
 <A name="operation"></A>
-<H2>3. ������@</H2>
+<H2>3. 操作方法</H2>
 
 <P>
-�C���^�[�v���^���[�h�A�f�o�b�K���[�h�̂ǂ���ł��A�K���̑�����@�͋��ʂł��B
-�L�[�{�[�h���當�͂���͂��A�Ō��ENTER�L�[�������Ɠ��͂������͂�]�����܂��B
-���͂�]���������ʂ́A�C���^�[�v���^���[�h�̏ꍇ�̓R���\�[���ɁA
-�f�o�b�K���[�h�̏ꍇ�̓S�[�X�g�̃o���[���ɕ\�����܂��B
+インタープリタモード、デバッガモードのどちらでも、幸水の操作方法は共通です。
+キーボードから文章を入力し、最後にENTERキーを押すと入力した文章を評価します。
+入力を評価した結果は、インタープリタモードの場合はコンソールに、
+デバッガモードの場合はゴーストのバルーンに表示します。
 </P>
 
 <P>
-�u.[ENTER]�v�Ɠ��͂���ƁA�K���͓��̓��[�h��؂�ւ��܂��B���̓��[�h��2��ނ���A
-�uecho���[�h�v�Ɓucommand���[�h�v������܂��B�R���\�[���̈�ԉ��̕\���s��
+「.[ENTER]」と入力すると、幸水は入力モードを切り替えます。入力モードは2種類あり、
+「echoモード」と「commandモード」があります。コンソールの一番下の表示行が
 <PRE>
   echo-mode >
 </PRE>
-�̏ꍇ��echo���[�h�A
+の場合がechoモード、
 <PRE>
   command-mode >
 </PRE>
-�̏ꍇ��command���[�h�ł��B�N������̃��[�h��echo���[�h�ł��B
+の場合がcommandモードです。起動直後のモードはechoモードです。
 </P>
 
 
 <A name="echomode"></A>
-<H3>echo���[�h</H3>
+<H3>echoモード</H3>
 
 <P>
-echo���[�h�ł́A�K���͓��͂��ꂽ���͂����̂܂ܕ]�����܂��B���͒���
-${npw}���̃G���g���Ăяo���A$(set A "TEST")���̃C�����C���X�N���v�g��
-����ꍇ�A��������߂��܂��B
+echoモードでは、幸水は入力された文章をそのまま評価します。文章中に
+${npw}等のエントリ呼び出し、$(set A "TEST")等のインラインスクリプトが
+ある場合、これも解釈します。
 </P>
 <PRE>
-��:
-  echo-mode > \0${���A}�A����${myname}�ł��B\1��낵���ȁB\e$(set Boot 1)
+例:
+  echo-mode > \0${挨拶}、私は${myname}です。\1よろしくな。\e$(set Boot 1)
 </PRE>
 
 
 <A name="commandmode"></A>
-<H3>command���[�h</H3>
+<H3>commandモード</H3>
 
 <P>
-command���[�h�̓C�����C���X�N���v�g�̕]���ɓ����������[�h�ł��B�K����
-���͂��ꂽ���͂̑O��ɁA"$("��")"��t�����Ă���]�����܂��B�Ⴆ�΁A
+commandモードはインラインスクリプトの評価に特化したモードです。幸水は
+入力された文章の前後に、"$("と")"を付加してから評価します。例えば、
 <PRE>
-  command-mode > adddict npw "�܂��"
+  command-mode > adddict npw "まゆら"
 </PRE>
-�Ɠ��͂���ƁA�u$(adddict npw "�܂��")�v�Ƃ�������]�����܂��B
+と入力すると、「$(adddict npw "まゆら")」という文を評価します。
 </P>
 
 
 <A name="quit"></A>
-<H2>�I�����@</H2>
+<H2>終了方法</H2>
 
 <P>
-echo���[�h�Acommand���[�h�̂ǂ���ł��A�uexit[ENTER]�v�Ɠ��͂����
-�K�����I�����邱�Ƃ��o���܂��B
+echoモード、commandモードのどちらでも、「exit[ENTER]」と入力すると
+幸水を終了することが出来ます。
 </P>
 
 
